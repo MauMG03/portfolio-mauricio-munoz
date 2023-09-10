@@ -12,10 +12,10 @@ const Computer = () => {
     useEffect(() => {
         const action = actions["Take 001"];
         action.play();
-    })
+    }, [])
 
     return(
-        <mesh ref={computerRef} scale={5} position={[2.5,0.2,0]} rotation-y={-Math.PI*0.15}>
+        <mesh ref={computerRef} scale={4} position={[2.2,0.5,0.3]} rotation-y={-Math.PI*0.02}>
             <primitive object={computerModel.scene}/>
         </mesh>
     );
