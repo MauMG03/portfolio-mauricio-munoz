@@ -5,12 +5,16 @@ import Computer from "./World/Computer";
 import Desk from "./World/Desk";
 import { Light } from "three";
 import Lights from "./World/Lights";
+import Environments from "./World/Environments";
+import { Perf } from "r3f-perf";
 
 const Experience = () => {
     return(
         <>
             <OrbitControls makeDefault/>
             <ambientLight intensity={0.5} />
+            {/* <Perf position={"top-right"}/> */}
+            <Environments/>
             {/* <directionalLight position={[10, 10, 5]} intensity={2} /> */}
             <Lights/>
             <Desk/>

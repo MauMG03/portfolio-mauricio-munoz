@@ -15,7 +15,7 @@ const Computer = () => {
     }, [])
 
     return(
-        <mesh castShadow ref={computerRef} scale={4} position={[2.2,0.5,0.3]} rotation-y={-Math.PI*0.02}>
+        <mesh castShadow ref={computerRef} scale={4} position={[2.2,0.4,0.3]} rotation-y={-Math.PI*0.02}>
             <primitive object={computerModel.scene}/>
         </mesh>
     );
