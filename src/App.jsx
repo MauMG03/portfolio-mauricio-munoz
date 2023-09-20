@@ -8,6 +8,7 @@ const App = () => {
         <>
             <Info name={"Mauricio Munoz"} biography={"Web 3D Developer"}/>
             <Canvas
+                shadows
                 camera={{ position: [2, 0, 5] }}
             >
                 <Experience />

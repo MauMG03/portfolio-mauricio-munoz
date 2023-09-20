@@ -15,6 +15,7 @@ export function Desk() {
   return (
     <group dispose={null}>
         <mesh scale={0.05}
+            castShadow
             geometry={nodes["Desk_Material_#7_0"].geometry}
             rotation={[-Math.PI / 2, 0, 1.5]}
             position={[2,-4.8,-0.2]}
