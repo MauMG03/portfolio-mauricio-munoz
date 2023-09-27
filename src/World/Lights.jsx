@@ -12,8 +12,8 @@ const Lights = () => {
             <spotLight
             ref={spotLightRef}
             castShadow
-            position={[-3, 4, 2]}
-            angle={Math.PI / 4}
+            position={[-1, 2, 5]}
+            angle={Math.PI / 3}
             intensity={200}
             color={"white"}
             penumbra={1}

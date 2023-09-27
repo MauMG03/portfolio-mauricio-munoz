@@ -1,7 +1,7 @@
 import { useAnimations, useGLTF } from "@react-three/drei";
 import { useEffect, useRef } from "react";
 
-const Computer = () => {
+const Computer = (props) => {
     const computerRef = useRef(null);
     
     const computerModel = useGLTF("/assets/models/computer/computer.glb");
@@ -9,13 +9,22 @@ const Computer = () => {
 
     const {actions} = useAnimations(animations,computerRef);
 
-    useEffect(() => {
+    const handleClick = () => {
         const action = actions["Take 001"];
-        action.play();
-    }, [])
+        if(action.isRunning()){
+            action.stop();
+        } else {action.play();}
+    }
 
     return(
-        <mesh castShadow ref={computerRef} scale={4} position={[2.2,0.4,0.3]} rotation-y={-Math.PI*0.02}>
+        <mesh castShadow 
+              ref={computerRef} 
+              scale={4} 
+              position={[2.2,0.4,0.3]} 
+              rotation-y={-Math.PI*0.02}
+              onClick={handleClick}
+              {...props}
+        >
             <primitive object={computerModel.scene}/>
         </mesh>
     );
