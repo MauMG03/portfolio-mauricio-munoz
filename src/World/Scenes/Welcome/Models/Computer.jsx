@@ -1,7 +1,6 @@
 import { useAnimations, useGLTF } from "@react-three/drei";
-import { useFrame, useThree } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
-import { MathUtils } from "three";
+import { useRef } from "react";
+import { useCameraContext, useCameraToggleContext } from "../../../../Context/CameraContext";
 
 const Computer = (props) => {
     const computerRef = useRef(null); 
@@ -9,19 +8,18 @@ const Computer = (props) => {
     
     const {animations} = computerModel;
     const {actions} = useAnimations(animations,computerRef);
-    const [active, setActive] = useState(false);
-    const { camera } = useThree();
+
+    const cameraPosition = useCameraContext();
+    const setCameraPosition = useCameraToggleContext();
     
     const handleClick = () => {
         const action = actions["Take 001"];
         if(action.isRunning()){
             action.stop();
-            camera.position.set(2, 0, 5);
-            setActive(false);
+            setCameraPosition([2, 0, 5]);
         } else {
             action.play();
-            camera.position.set(1.2, 0.1255, 3.831);
-            setActive(true);
+            setCameraPosition([1.2, 0.1255, 3.831]);
         }
     }
 
