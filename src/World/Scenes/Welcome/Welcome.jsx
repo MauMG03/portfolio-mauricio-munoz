@@ -34,7 +34,7 @@ const Welcome = () => {
     }
 
     const handleCI = () => {
-        setCameraPosition([-1.8, 0.4, 7.2])
+        setCameraPosition([-1, 0.4, 7.2])
         setRotationPosition([0.01, 1.55]);
     }
 
