@@ -1,7 +1,10 @@
-import { Text } from "@react-three/drei";
+import { Float, Text } from "@react-three/drei";
 import { useCameraContext, useCameraToggleContext } from "../../../Context/CameraContext";
 import { useRotationContext, useRotationToggleContext } from "../../../Context/RotationContext";
 import CustomText3D from "../Welcome/Text/CustomText3d";
+import { ReactLogo } from "./Models/ReactLogo";
+import { JSLogo } from "./Models/JSLogo";
+import { PythonLogo } from "./Models/PythonLogo";
 
 const Skills = () => {
     const cameraPosition = useCameraContext();
@@ -29,6 +32,15 @@ const Skills = () => {
                 "• Web development: React.js, Next.js.\n\n" + 
                 "• Other: Git, Docker."}
             </Text>
+            <Float
+                speed={2} // Animation speed
+                rotationIntensity={0.1} // XYZ rotation intensity
+                floatIntensity={0.7} // Up/down float intensity
+            >
+                <ReactLogo scale={0.08} position={[-1.5,0,12]}/>
+                <JSLogo scale={0.015} rotation={[0,Math.PI/2*3,Math.PI/2]} position={[-0.8,0.3,12]}/>
+                <PythonLogo scale={0.06} rotation-x={Math.PI} rotation-y={0.5} position={[-0.7,-0.5,12]}/>
+            </Float>
         </>
     )
 }
