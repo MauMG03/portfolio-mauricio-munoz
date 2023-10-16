@@ -1,8 +1,5 @@
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
-import { RigidBody } from "@react-three/rapier";
-import { useFrame } from "@react-three/fiber";
-
 
 export function Soccerball(props) {
     const { nodes, materials } = useGLTF("/assets/models/soccerball/soccerball.glb");

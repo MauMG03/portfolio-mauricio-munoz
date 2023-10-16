@@ -1,10 +1,10 @@
 import { Text } from "@react-three/drei";
-import { useCameraContext, useCameraToggleContext } from "../../../Context/CameraContext";
-import { useRotationContext, useRotationToggleContext } from "../../../Context/RotationContext";
+import { useCameraToggleContext } from "../../../Context/CameraContext";
+import { useRotationToggleContext } from "../../../Context/RotationContext";
 import CustomText3D from "../Welcome/Text/CustomText3d";
 import { Car } from "./Models/Car";
 import { RigidBody } from "@react-three/rapier";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 const ContactInfo = () => {
     const carBodyRef = useRef(null);

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 import { RigidBody } from "@react-three/rapier";
 

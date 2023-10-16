@@ -1,4 +1,4 @@
-import { Sky, Sparkles, Stars } from "@react-three/drei";
+import { Sky, Sparkles } from "@react-three/drei";
 
 const Environments = () => {
     return(

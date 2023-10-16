@@ -1,6 +1,6 @@
 import { useAnimations, useGLTF } from "@react-three/drei";
 import { useRef } from "react";
-import { useCameraContext, useCameraToggleContext } from "../../../../Context/CameraContext";
+import { useCameraToggleContext } from "../../../../Context/CameraContext";
 
 const Computer = (props) => {
     const computerRef = useRef(null); 
@@ -9,7 +9,6 @@ const Computer = (props) => {
     const {animations} = computerModel;
     const {actions} = useAnimations(animations,computerRef);
 
-    const cameraPosition = useCameraContext();
     const setCameraPosition = useCameraToggleContext();
     
     const handleClick = () => {

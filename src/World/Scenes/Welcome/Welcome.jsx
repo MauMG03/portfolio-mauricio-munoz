@@ -1,4 +1,4 @@
-import { Suspense, useRef, useState } from "react"
+import { useState } from "react"
 import Environments from "../../Staging/Environments"
 import Lights from "../../Staging/Lights"
 import Room from "../../Staging/Room"
@@ -6,16 +6,14 @@ import Desk from "./Models/Desk"
 import Computer from "./Models/Computer"
 import ClickMe from "./Text/ClickMe"
 import Controls from "../../Controls/Controls"
-import { useFrame, useThree } from "@react-three/fiber"
+import { useFrame } from "@react-three/fiber"
 import CustomText3D from "./Text/CustomText3d"
 import { MathUtils } from "three"
 import { useCameraContext, useCameraToggleContext } from "../../../Context/CameraContext"
 import { useRotationContext, useRotationToggleContext } from "../../../Context/RotationContext"
-import { Physics } from "@react-three/rapier"
 
 const Welcome = () => {
     const [active, setActive] = useState(false);
-    const { camera } = useThree();
 
     const cameraPosition = useCameraContext();
     const setCameraPosition = useCameraToggleContext();

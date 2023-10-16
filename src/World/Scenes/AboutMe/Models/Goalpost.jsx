@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useGLTF } from "@react-three/drei";
-import { CuboidCollider, HeightfieldCollider, RigidBody } from "@react-three/rapier";
+import { CuboidCollider, RigidBody } from "@react-three/rapier";
 
 export function Goalpost(props) {
     const { nodes, materials } = useGLTF("/assets/models/goalpost/goalpost.glb");

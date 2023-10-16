@@ -1,16 +1,14 @@
 import { Float, Text } from "@react-three/drei";
-import { useCameraContext, useCameraToggleContext } from "../../../Context/CameraContext";
-import { useRotationContext, useRotationToggleContext } from "../../../Context/RotationContext";
+import { useCameraToggleContext } from "../../../Context/CameraContext";
+import { useRotationToggleContext } from "../../../Context/RotationContext";
 import CustomText3D from "../Welcome/Text/CustomText3d";
 import { ReactLogo } from "./Models/ReactLogo";
 import { JSLogo } from "./Models/JSLogo";
 import { PythonLogo } from "./Models/PythonLogo";
 
 const Skills = () => {
-    const cameraPosition = useCameraContext();
     const setCameraPosition = useCameraToggleContext();
 
-    const rotationPosition = useRotationContext();
     const setRotationPosition = useRotationToggleContext();
     
     const handleBack = () => {

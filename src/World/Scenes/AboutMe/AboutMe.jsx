@@ -6,7 +6,6 @@ import { Goalpost } from "./Models/Goalpost";
 import { Soccerball } from "./Models/Soccerball";
 import { useEffect, useRef, useState } from "react";
 import { RigidBody } from "@react-three/rapier";
-import { useFrame } from "@react-three/fiber";
 
 const AboutMe = () => {
     const ballRef = useRef(null);
@@ -15,10 +14,8 @@ const AboutMe = () => {
     const [play, setPlay] = useState(false);
     const [hitSound] = useState(() => new Audio("/assets/sounds/ballbounce.wav"));
 
-    const cameraPosition = useCameraContext();
     const setCameraPosition = useCameraToggleContext();
 
-    const rotationPosition = useRotationContext();
     const setRotationPosition = useRotationToggleContext();
 
     const handleBack = () => {
