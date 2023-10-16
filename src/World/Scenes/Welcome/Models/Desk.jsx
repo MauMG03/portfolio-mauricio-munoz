@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
+import { RigidBody } from "@react-three/rapier";
 
 export function Desk(props) {
   const { nodes, materials } = useGLTF("assets/models/desk/desk.glb");
@@ -13,17 +14,19 @@ export function Desk(props) {
   })
 
   return (
-    <group dispose={null}>
+    <RigidBody colliders={"hull"}>
+      <group dispose={null}>
         <mesh scale={0.05}
-            castShadow
-            geometry={nodes["Desk_Material_#7_0"].geometry}
-            rotation={[-Math.PI / 2, 0, 1.5]}
-            position={[2,-4.8,-0.2]}
-            {...props}
+          castShadow
+          geometry={nodes["Desk_Material_#7_0"].geometry}
+          rotation={[-Math.PI / 2, 0, 1.5]}
+          position={[2, -4.8, -0.2]}
+          {...props}
         >
-            <meshStandardMaterial {...propsTextures} />
+          <meshStandardMaterial {...propsTextures} />
         </mesh>
-    </group>
+      </group>
+    </RigidBody>
   );
 }
 
